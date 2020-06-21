@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hexo博客butterfly主题美化之新增看板娘(能说话、能换装) | 𝑵𝑲'𝒔 𝑩𝒍𝒐𝒈</title><meta name="description" content="先上最终效果图                 教程： 准备工作：该项目需要 jQuery 和 font-awesome 支持。  本插件需要 jQuery 和 Font Awesome 4.7.0 支持，请确保它们已在页面中加载，例如在 &lt;head&gt; 中加入：jQuery and Font Awesome 4.7.0 is required for this"><meta name="keywords" content="hexo"><meta name="author" content="𝑵𝒊𝒄𝒐𝒍𝒂𝒔-𝒌𝒊𝒏𝒈𝒔"><meta name="copyright" content="𝑵𝒊𝒄𝒐𝒍𝒂𝒔-𝒌𝒊𝒏𝒈𝒔"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/images/favicon.ico"><link rel="canonical" href="https://nkupp.com/2019/12/26/post-10/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta property="og:type" content="article"><meta property="og:title" content="Hexo博客butterfly主题美化之新增看板娘(能说话、能换装)"><meta property="og:url" content="https://nkupp.com/2019/12/26/post-10/"><meta property="og:site_name" content="𝑵𝑲'𝒔 𝑩𝒍𝒐𝒈"><meta property="og:description" content="先上最终效果图                 教程： 准备工作：该项目需要 jQuery 和 font-awesome 支持。  本插件需要 jQuery 和 Font Awesome 4.7.0 支持，请确保它们已在页面中加载，例如在 &lt;head&gt; 中加入：jQuery and Font Awesome 4.7.0 is required for this"><meta property="og:image" content="https://ae01.alicdn.com/kf/Ud732a8e55bf94bc69f286edd9b65f2b2I.jpg"><meta property="article:published_time" content="2019-12-26T10:00:55.000Z"><meta property="article:modified_time" content="2020-06-21T07:37:20.772Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = '1'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="prev" title="Hexo博客butterfly主题美化之博文置顶" href="https://nkupp.com/2019/12/27/post-11/"><link rel="next" title="值得记住的一天" href="https://nkupp.com/2019/12/21/post-15/"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7fada6c188e5a965a36b6e6c27ce463d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"languages":{"author":"作者: 𝑵𝒊𝒄𝒐𝒍𝒂𝒔-𝒌𝒊𝒏𝒈𝒔","link":"链接: ","source":"来源: 𝑵𝑲'𝒔 𝑩𝒍𝒐𝒈","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-center"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: true,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="𝑵𝑲'𝒔 𝑩𝒍𝒐𝒈" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/images/avatar.png" onerror="onerror=null;src='/img/friend_404.svg'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/select/select/"><i class="fa-fw fab fa-meetup"></i><span> 网址导航</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-filter"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 存档</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-heartbeat"></i><span> 娱乐天地</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/select/countdown/"><i class="fa-fw fas fa-clock"></i><span> 倒计时</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-photo-video"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-code"></i><span> 在线工具</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/jsonon/"><i class="fa-fw fas fa-file-code"></i><span> json</span></a></li><li><a class="site-page" href="/tuc/"><i class="fa-fw fas fa-cloud"></i><span> 图床</span></a></li><li><a class="site-page" href="/Photoshop/"><i class="fa-fw fas fa-cookie-bite"></i><span> PS</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://s2.ax1x.com/2019/12/21/QvhgNF.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">𝑵𝑲'𝒔 𝑩𝒍𝒐𝒈</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/select/select/"><i class="fa-fw fab fa-meetup"></i><span> 网址导航</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-filter"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 存档</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-heartbeat"></i><span> 娱乐天地</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/select/countdown/"><i class="fa-fw fas fa-clock"></i><span> 倒计时</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-photo-video"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-code"></i><span> 在线工具</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/jsonon/"><i class="fa-fw fas fa-file-code"></i><span> json</span></a></li><li><a class="site-page" href="/tuc/"><i class="fa-fw fas fa-cloud"></i><span> 图床</span></a></li><li><a class="site-page" href="/Photoshop/"><i class="fa-fw fas fa-cookie-bite"></i><span> PS</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Hexo博客butterfly主题美化之新增看板娘(能说话、能换装)</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2019-12-26 18:00:55"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2019-12-26</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-06-21 15:37:20"><i class="fas fa-history fa-fw"></i> 更新于 2020-06-21</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/hexo/">hexo</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><div class="note primary no-icon">
+            <p>先上最终效果图</p>
+          </div>
+
+
+<p> <img src= "/img/loading.gif" data-src="https://s2.ax1x.com/2019/12/26/lA0R2Q.gif" alt="效果预览"></p>
+<h2 id="教程："><a href="#教程：" class="headerlink" title=" 教程："></a> 教程：</h2><p> 准备工作：该项目需要 <code>jQuery</code> 和 <code>font-awesome</code> 支持。</p>
+<p> 本插件需要 <code>jQuery</code> 和 <code>Font Awesome 4.7.0</code> 支持，请确保它们已在页面中加载，例如在 <code>&lt;head&gt;</code> 中加入：<br>jQuery and Font Awesome 4.7.0 is required for this plugin. You can add this to <code>&lt;head&gt;</code>:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;jquery&#x2F;dist&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;font-awesome&#x2F;css&#x2F;font-awesome.min.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="官方版"><a href="#官方版" class="headerlink" title="官方版"></a>官方版</h3></li>
+</ul>
+<p>hexo的官方是支持看板娘的，已经封装好了插件，但只是模型，不能说话、不能换装、功能较少。</p>
+<p>1.安装模块<br>执行命令：<code>npm install --save hexo-helper-live2d</code></p>
+<p>2.在 站点配置文件 或 主题配置文件 中新增如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># Live2D</span><br><span class="line">## https:&#x2F;&#x2F;github.com&#x2F;EYHN&#x2F;hexo-helper-live2d</span><br><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  # enable: false</span><br><span class="line">  scriptFrom: local # 默认</span><br><span class="line">  pluginRootPath: live2dw&#x2F; # 插件在站点上的根目录(相对路径)</span><br><span class="line">  pluginJsPath: lib&#x2F; # 脚本文件相对与插件根目录路径</span><br><span class="line">  pluginModelPath: assets&#x2F; # 模型文件相对与插件根目录路径</span><br><span class="line">  # scriptFrom: jsdelivr # jsdelivr CDN</span><br><span class="line">  # scriptFrom: unpkg # unpkg CDN</span><br><span class="line">  # scriptFrom: https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;live2d-widget@3.x&#x2F;lib&#x2F;L2Dwidget.min.js # 你的自定义 url</span><br><span class="line">  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span><br><span class="line">  debug: false # 调试, 是否在控制台输出日志</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-wanko # npm-module package name</span><br><span class="line">    # use: wanko # 博客根目录&#x2F;live2d_models&#x2F; 下的目录名</span><br><span class="line">    # use: .&#x2F;wives&#x2F;wanko # 相对于博客根目录的路径</span><br><span class="line">    # use: https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;live2d-widget-model-wanko@1.0.5&#x2F;assets&#x2F;wanko.model.json # 你的自定义 url</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: true # 手机中是否展示</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>官方版效果如下：</p>
+</blockquote>
+<p><img src= "/img/loading.gif" data-src="https://s2.ax1x.com/2019/12/26/lARlWt.gif" alt="lARlWt.gif"></p>
+<ul>
+<li><h3 id="魔改版"><a href="#魔改版" class="headerlink" title="魔改版"></a>魔改版</h3></li>
+</ul>
+<blockquote>
+<p>功能齐全。能说话、能换装、能玩游戏、能拍照、还能自定义。</p>
+</blockquote>
+<p>1.这里介绍一下 <a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">张书樵大神</a>魔改项目。首先</p>
+<p><code>git clone https://github.com/stevenjoezhang/live2d-widget.git</code></p>
+<p>放在本地博客目录的 themes/butterfly（hexo主题名称）/source 下，修改文件夹名为 live2d-widget，修改项目中的 autoload.js 文件，如下：</p>
+<p>将</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const live2d_path &#x3D; &quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;stevenjoezhang&#x2F;live2d-widget&#x2F;&quot;;</span><br></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const live2d_path &#x3D; &quot;&#x2F;live2d-widget&#x2F;&quot;;</span><br></pre></td></tr></table></figure>
+<p>2.在 <code>/source/data/butterfly（hexo主题名称）.yml</code>中新增<code>/live2d-widget/autoload.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CDN_USE:</span><br><span class="line">  css:</span><br><span class="line">    - &#x2F;css&#x2F;index.css</span><br><span class="line">    - https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;font-awesome@latest&#x2F;css&#x2F;font-awesome.min.css</span><br><span class="line">    # - https:&#x2F;&#x2F;use.fontawesome.com&#x2F;releases&#x2F;v5.8.1&#x2F;css&#x2F;all.css #fontawesomeV5_css</span><br><span class="line"></span><br><span class="line">  js:</span><br><span class="line">    - https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;jquery@latest&#x2F;dist&#x2F;jquery.min.js  #&#x2F;js&#x2F;third-party&#x2F;jquery.min.js</span><br><span class="line">    - &#x2F;js&#x2F;utils.js</span><br><span class="line">    - &#x2F;js&#x2F;main.js</span><br><span class="line">    - &#x2F;live2d-widget&#x2F;autoload.js  #新增</span><br></pre></td></tr></table></figure>
+<p>3.在 <code>/source/data/butterfly（hexo主题名称）.yml</code>中增加下面内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+<p>4.想修改看板娘大小、位置、格式、文本内容等，可查看并修改 <code>waifu-tips.js</code> 、 <code>waifu-tips.json</code> 和 <code>waifu.css</code>。</p>
+<div class="note success">
+            <p>大功告成</p>
+          </div>
+
+
+<p> <img src= "/img/loading.gif" data-src="https://s2.ax1x.com/2019/12/26/lA0R2Q.gif" alt="最终效果预览"></p>
+<img src= "/img/loading.gif" data-src="https://s2.ax1x.com/2019/12/28/lemBSf.png" width = "247" height = "298" div align=center />
+<center>微信扫码即可关注公众号哟！</center>
+
+
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">𝑵𝒊𝒄𝒐𝒍𝒂𝒔-𝒌𝒊𝒏𝒈𝒔</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://nkupp.com/2019/12/26/post-10/">https://nkupp.com/2019/12/26/post-10/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nkupp.com" target="_blank">𝑵𝑲'𝒔 𝑩𝒍𝒐𝒈</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo</a></div><div class="post_share"><div class="social-share" data-image="https://s2.ax1x.com/2019/12/15/QWX5lD.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/12/27/post-11/"><img class="prev-cover" data-src="https://ae01.alicdn.com/kf/U78d116e0cca942f9b058830a27d86b58S.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hexo博客butterfly主题美化之博文置顶</div></div></a></div><div class="next-post pull-right"><a href="/2019/12/21/post-15/"><img class="next-cover" data-src="https://s2.ax1x.com/2019/12/21/QvhgNF.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">值得记住的一天</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/12/27/post-13/" title="Hexo博客butterfly主题美化之雪花效果"><img class="relatedPosts_cover" data-src="https://ae01.alicdn.com/kf/U7705b823ecb94dedaf0452b8ec980674n.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2019-12-27</div><div class="relatedPosts_title">Hexo博客butterfly主题美化之雪花效果</div></div></a></div><div class="relatedPosts_item"><a href="/2019/12/27/post-12/" title="Hexo博客butterfly主题美化之自定义一个不使用主题模板渲染的独立页面"><img class="relatedPosts_cover" data-src="https://s2.ax1x.com/2019/12/15/QfZ55T.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2019-12-27</div><div class="relatedPosts_title">Hexo博客butterfly主题美化之自定义一个不使用主题模板渲染的独立页面</div></div></a></div><div class="relatedPosts_item"><a href="/2019/12/27/post-11/" title="Hexo博客butterfly主题美化之博文置顶"><img class="relatedPosts_cover" data-src="https://ae01.alicdn.com/kf/U78d116e0cca942f9b058830a27d86b58S.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2019-12-27</div><div class="relatedPosts_title">Hexo博客butterfly主题美化之博文置顶</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'j9Qwbqc0RdthRVCiHm9Q0DE1-gzGzoHsz',
+  appKey: '7Rff2XW8CcmmmObgINhMF4FK',
+  placeholder: 'ヾﾉ≧∀≦)留下邮箱，才能更及时的回复',
+  avatar: 'robohash',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-cn',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: false,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" style="background-image: url(https://s2.ax1x.com/2019/12/21/QvhgNF.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By 𝑵𝒊𝒄𝒐𝒍𝒂𝒔-𝒌𝒊𝒏𝒈𝒔</div><div class="framework-info"><span>Power by </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">简</button><button id="darkmode" title="夜间模式"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/third-party/ClickShowText.js"></script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>
